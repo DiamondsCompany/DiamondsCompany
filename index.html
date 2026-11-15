@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DiamondsCompany</title>
+<style>
+:root{--bg:#f3f1fb;--card:#fff;--tx:#1b1736;--mu:#6b6890;--ac:#7c3aed;--ac2:#06b6d4;--bd:#e3e0f5;--ok:#16c784;--no:#ef4444;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){color-scheme:dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0a1a;--card:#15132b;--tx:#f1efff;--mu:#9d99c9;--bd:#2a2750}}
+:root[data-theme="dark"]{--bg:#0b0a1a;--card:#15132b;--tx:#f1efff;--mu:#9d99c9;--bd:#2a2750;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:78px;min-height:100vh}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--bd)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--card)}
+.logo{font-weight:900;font-size:19px;background:linear-gradient(90deg,#7c3aed,#06b6d4,#f472b6,#7c3aed);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite;filter:drop-shadow(0 0 8px #7c3aed66)}
+@keyframes sh{to{background-position:300%}}
+.ib{display:flex;gap:7px}.ib button{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:15px;cursor:pointer}
+main{max-width:640px;margin:auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
+.hero{background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;border:0;text-align:center;position:relative;overflow:hidden}
+.hero h2{margin:0 0 4px;font-size:21px}.hero p{margin:0;opacity:.9}
+.tk{overflow:hidden;white-space:nowrap}.tk div{display:inline-block;padding-left:100%;animation:tk 18s linear infinite;font-weight:600;color:var(--ac)}
+@keyframes tk{to{transform:translateX(-100%)}}
+.btn{border:0;border-radius:12px;padding:11px 14px;font-weight:700;background:var(--ac);color:#fff;cursor:pointer;font-size:14px}
+.btn.g{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}.btn.ok{background:var(--ok)}.btn.no{background:var(--no)}.btn.w{width:100%}.btn.s{padding:6px 10px;font-size:12px}
+input,select,textarea{width:100%;padding:11px;border-radius:11px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:14px;margin:5px 0}
+label{font-size:12px;color:var(--mu)}
+.offer{display:flex;align-items:center;gap:12px;cursor:pointer;background:linear-gradient(135deg,#ff7a1a22,#ef444422)}
+.offer .em{font-size:34px}.offer b{font-size:16px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--bd);font-size:14px}.row:last-child{border:0}
+.pk{display:flex;justify-content:space-between;padding:13px;border:1px solid var(--bd);border-radius:12px;margin:7px 0;cursor:pointer;background:var(--bg);font-weight:700}
+.pk:active{border-color:var(--ac)}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:20;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--mu);padding:9px 0;font-size:11px;cursor:pointer}nav button span{display:block;font-size:19px}nav button.on{color:var(--ac);font-weight:700}
+.mod{position:fixed;inset:0;z-index:50;background:#000a;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--card);width:100%;max-width:640px;max-height:90vh;overflow:auto;border-radius:20px 20px 0 0;padding:16px;animation:up .25s}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.badge{padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;color:#fff}.b0{background:#f59e0b}.b1{background:var(--ok)}.b2{background:var(--no)}
+.full{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;background:radial-gradient(circle at 50% 30%,#2a1466,#07061a);color:#fff}
+.full.ok{background:radial-gradient(circle at 50% 30%,#0b6b45,#04180f)}.full.no{background:radial-gradient(circle at 50% 30%,#7a1020,#1a0408)}
+.orb{width:130px;height:130px;border-radius:50%;position:relative;margin:10px 0 22px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.orb i{position:absolute;inset:0;border-radius:50%;border:4px solid transparent;border-top-color:#a78bfa;border-right-color:#22d3ee;animation:sp 1.1s linear infinite}
+.orb i:nth-child(2){inset:12px;animation-duration:1.7s;animation-direction:reverse;border-top-color:#f472b6}
+.orb i:nth-child(3){inset:-14px;border:2px solid #7c3aed88;animation:pl 1.6s ease-out infinite}
+.full.ok .orb i,.full.no .orb i{animation:pl 1.4s ease-out infinite;border:3px solid #fff7}
+.full.ok .orb,.full.no .orb{animation:pop .6s}
+@keyframes sp{to{transform:rotate(360deg)}}@keyframes pl{from{transform:scale(.8);opacity:1}to{transform:scale(1.5);opacity:0}}@keyframes pop{from{transform:scale(0)}60%{transform:scale(1.2)}}
+.sum{background:#ffffff18;border-radius:14px;padding:12px 16px;text-align:left;min-width:250px;font-size:14px;line-height:1.8;margin-bottom:16px}
+.stars span{cursor:pointer;font-size:24px;color:#aaa}.stars .f{color:#fbbf24}
+.msg{padding:8px 11px;border-radius:12px;margin:6px 0;max-width:85%;font-size:14px;width:fit-content}.me{background:var(--ac);color:#fff;margin-left:auto}.bot{background:var(--bg);border:1px solid var(--bd)}
+.live{display:flex;align-items:center;gap:8px}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);animation:pl 1.3s infinite}
+.toast{position:fixed;top:calc(60px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:var(--ac);color:#fff;padding:10px 16px;border-radius:12px;z-index:99;font-size:14px}
+.tabs{display:flex;gap:6px;overflow:auto;margin-bottom:10px}.tabs button{white-space:nowrap}
+.sm{font-size:12px;color:var(--mu)}
+.robot{animation:fl 2.5s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-5px)}}
+</style></head><body>
+<div id="app"></div>
+<script>
+const K='dc_v1',ADMIN='arderiflow9@gmail.com';
+const DEF={users:[],orders:[],reviews:[],cur:null,theme:'',
+offers:[{id:'ff',game:'Free Fire',emoji:'🔥',items:[[110,265],[341,795],[572,1325],[1166,2650],[2398,5300],[6160,13250]]}],
+st:{phone:'+53 50778140',card:'0000 0000 0000 0000',cphone:'+53 50778140',usdt:'TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',rate:305,group:'https://chat.whatsapp.com/',channel:'https://whatsapp.com/channel/',wa1:'+5350778140',wa2:'+5350778140',notice:'¡Bienvenido a DiamondsCompany! Recargas rápidas y seguras.'}};
+let S;try{S=JSON.parse(localStorage.getItem(K))}catch(x){}
+S=Object.assign(JSON.parse(JSON.stringify(DEF)),S||{});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(x){}};
+const $=s=>document.querySelector(s),e=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let view='home',aTab='cli',modal='',F={},ovId=null,lastSt={},authMode='in',chat=[],stars=0;
+const me=()=>S.users.find(u=>u.email==S.cur),isAdm=()=>{const u=me();return u&&(u.email==ADMIN||u.admin&&false)&&u.email==ADMIN};
+const money=n=>Number(n).toLocaleString('es');
+const crz=n=>(n/S.st.rate).toFixed(2);
+const toast=t=>{const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2200)};
+const cp=t=>{try{navigator.clipboard.writeText(t)}catch(x){}toast('Copiado ✅')};
+const gem='<svg width="40" height="40" viewBox="0 0 40 40"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#7c3aed"/><stop offset="1" stop-color="#f472b6"/></linearGradient></defs><polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="url(#gg)"/><polygon points="20,8 30,13 30,27 20,32 10,27 10,13" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/><text x="20" y="25" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">CRZ</text></svg>';
+const robot='<svg class="robot" width="70" height="70" viewBox="0 0 70 70"><line x1="35" y1="6" x2="35" y2="16" stroke="#7c3aed" stroke-width="3"/><circle cx="35" cy="6" r="4" fill="#f472b6"/><rect x="12" y="16" width="46" height="38" rx="12" fill="#7c3aed"/><rect x="18" y="24" width="34" height="20" rx="8" fill="#0b0a1a"/><circle cx="28" cy="34" r="4" fill="#22d3ee"/><circle cx="42" cy="34" r="4" fill="#22d3ee"/><rect x="8" y="30" width="5" height="10" rx="2" fill="#06b6d4"/><rect x="57" y="30" width="5" height="10" rx="2" fill="#06b6d4"/><rect x="26" y="58" width="18" height="6" rx="3" fill="#06b6d4"/></svg>';
+function theme(){document.documentElement.dataset.theme=S.theme||''}
+function render(){theme();const u=me();if(!u){$('#app').innerHTML=authH();return}
+ let m=view=='home'?home():view=='orders'?ordersV():view=='wallet'?wallet():view=='profile'?profile():adminV();
+ $('#app').innerHTML=`<header><div class="logo">💎 DiamondsCompany</div><div class="ib"><button onclick="setTheme()" title="Tema">${S.theme=='dark'?'☀️':'🌙'}</button><button onclick="go('home')">🏪</button><button onclick="mo('notice')">🔔</button><button onclick="go('wallet')">🪙</button></div></header><main>${m}</main><nav>${[['home','🏠','Principal'],['orders','📦','Pedidos'],['wallet','🪙','Wallet'],['profile','👤','Perfil']].concat(isAdm()?[['admin','🛠️','Admin']]:[]).map(n=>`<button class="${view==n[0]?'on':''}" onclick="go('${n[0]}')"><span>${n[1]}</span>${n[2]}</button>`).join('')}</nav>${modalH()}${ovH()}`}
+const go=v=>{view=v;modal='';render();scrollTo(0,0)},mo=m=>{modal=m;render()},setTheme=()=>{S.theme=S.theme=='dark'?'light':'dark';save();render()};
+function authH(){const r=authMode=='up';return `<main style="padding-top:40px"><div class="card" style="text-align:center"><div class="logo" style="font-size:28px">💎 DiamondsCompany</div><p class="sm">Recargas de diamantes rápidas y seguras</p>${r?'<input id="an" placeholder="Nombre">':''}${r?'<input id="ap" placeholder="Número (opcional)" inputmode="tel">':''}<input id="ae" type="email" placeholder="Correo"><input id="aw" type="password" placeholder="Contraseña"><button class="btn w" onclick="auth()">${r?'Crear cuenta':'Iniciar sesión'}</button><p class="sm" onclick="authMode='${r?'in':'up'}';render()" style="cursor:pointer;color:var(--ac)">${r?'¿Ya tienes cuenta? Inicia sesión':'¿No tienes cuenta? Créala'}</p></div></main>`}
+function auth(){const em=$('#ae').value.trim().toLowerCase(),pw=$('#aw').value;if(!em||!pw)return toast('Completa los campos');
+ if(authMode=='up'){const n=$('#an').value.trim();if(!n)return toast('Pon tu nombre');if(S.users.find(u=>u.email==em))return toast('Ese correo ya existe');S.users.push({email:em,pw,name:n,phone:$('#ap').value.trim(),credits:0,banned:false,admin:em==ADMIN,ts:Date.now()});S.cur=em}
+ else{const u=S.users.find(u=>u.email==em&&u.pw==pw);if(!u)return toast('Correo o contraseña incorrectos');if(u.banned)return toast('Cuenta baneada 🚫');S.cur=em}save();view='home';render()}
+function home(){const del=S.orders.filter(o=>o.status==1&&o.type=='r'),l=del[del.length-1],s=S.st;
+ return `<div class="card hero"><h2>¡Bienvenido a DiamondsCompany! 💎</h2><p>Hola, ${e(me().name)} 👋</p></div>
+ <div class="card tk"><div>⚡ Recargas en menos de 15 minutos &nbsp;•&nbsp; 🔒 Rápidos y seguros &nbsp;•&nbsp; 💰 Los mejores precios</div></div>
+ ${S.offers.map(o=>`<div class="card offer" onclick="openOffer('${o.id}')"><div class="em">${o.emoji}</div><div><b>${e(o.game)} 💎</b><div class="sm">Toca para ver las ofertas</div></div></div>`).join('')}
+ <div class="card"><div class="live"><span class="dot"></span><b>En vivo</b></div><div class="row"><span>Recargas entregadas</span><b>${del.length}</b></div><div class="row"><span>Última entregada</span><span class="sm">${l?`${e(l.game)} 💎${l.pack} · ID ***${e(String(l.gid).slice(-3))}`:'Aún no hay'}</span></div></div>
+ <div class="card"><b>⭐ Referencias</b>${S.reviews.slice(-6).reverse().map(r=>`<div class="row"><span><b>${e(r.name)}</b><br><span class="sm">${e(r.txt)}</span></span><span>${'⭐'.repeat(r.s)}</span></div>`).join('')||'<p class="sm">Sé el primero en opinar</p>'}
+ <div class="stars">${[1,2,3,4,5].map(i=>`<span class="${i<=stars?'f':''}" onclick="stars=${i};render()">★</span>`).join('')}</div><textarea id="rt" rows="2" placeholder="Escribe tu referencia..."></textarea><button class="btn w" onclick="addRev()">Enviar referencia</button></div>
+ <button class="btn w" onclick="mo('help')">¿Necesitas ayuda? 💬</button>
+ <div class="card" style="margin-top:12px"><b>Contacta con nuestro soporte</b><div style="display:flex;gap:8px;margin-top:8px"><a class="btn w" style="text-align:center;text-decoration:none;background:#25d366" href="https://wa.me/${s.wa1.replace(/\D/g,'')}" target="_blank">WhatsApp 1</a><a class="btn w" style="text-align:center;text-decoration:none;background:#25d366" href="https://wa.me/${s.wa2.replace(/\D/g,'')}" target="_blank">WhatsApp 2</a></div><b style="display:block;margin-top:14px">Sé parte de nuestra comunidad</b><div style="display:flex;gap:8px;margin-top:8px"><a class="btn w" style="text-align:center;text-decoration:none" href="${e(s.group)}" target="_blank">👥 Grupo</a><a class="btn w" style="text-align:center;text-decoration:none" href="${e(s.channel)}" target="_blank">📢 Canal</a></div></div>`}
+function addRev(){const t=$('#rt').value.trim();if(!stars||!t)return toast('Pon estrellas y texto');S.reviews.push({name:me().name,txt:t,s:stars});stars=0;save();render()}
+function openOffer(id){F={offer:S.offers.find(o=>o.id==id)};mo('offer')}
+function modalH(){let b='';
+ if(modal=='offer')b=`<h3>${F.offer.emoji} ${e(F.offer.game)}</h3>`+F.offer.items.map((p,i)=>`<div class="pk" onclick="pick(${i})"><span>💎 ${p[0]} 💎</span><span>${money(p[1])} Saldo Móvil 📱</span></div>`).join('');
+ else if(modal=='gid')b=`<h3>💎 ${F.pack[0]} · ${money(F.pack[1])} Saldo</h3><label>ID del jugador</label><input id="gid" inputmode="numeric" placeholder="Ej: 123456789"><button class="btn w" onclick="sendId()">Enviar</button>`;
+ else if(modal=='pay')b=payH();
+ else if(modal=='notice')b=`<h3>🔔 Avisos</h3><p>${e(S.st.notice)}</p>`;
+ else if(modal=='help')b=`<div style="text-align:center">${robot}<h3 style="margin:4px">Hablar con Roxi</h3><p class="sm">Asistente IA de DiamondsCompany</p></div><div id="ch" style="min-height:90px;max-height:240px;overflow:auto">${chat.map(m=>`<div class="msg ${m.r}">${e(m.t)}</div>`).join('')||'<div class="msg bot">¡Hola! Soy Roxi 🤖 ¿En qué te ayudo?</div>'}</div><div style="display:flex;gap:6px"><input id="cq" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')ask()"><button class="btn" onclick="ask()">➤</button></div>`;
+ else if(modal=='dep')b=`<h3>Depositar créditos</h3><label>Cantidad (mínimo 1) · 1 CRZ = ${S.st.rate} saldo</label><input id="dq" type="number" min="1" value="1" oninput="$('#dt').textContent=money(Math.max(1,+this.value||1)*S.st.rate)"><p>Total: <b id="dt">${S.st.rate}</b> Saldo</p><button class="btn w" onclick="depGo()">Continuar al pago</button>`;
+ else if(modal=='send')b=`<h3>Enviar créditos</h3><input id="se" type="email" placeholder="Correo del destinatario"><input id="sq" type="number" min="1" placeholder="Cantidad"><button class="btn w" onclick="sendCr()">Enviar</button>`;
+ else if(modal=='edit')b=`<h3>Editar perfil</h3><input id="pn" value="${e(me().name)}"><input id="pp" value="${e(me().phone)}" placeholder="Número"><button class="btn w" onclick="me().name=$('#pn').value||me().name;me().phone=$('#pp').value;save();modal='';render()">Guardar</button>`;
+ return b?`<div class="mod" onclick="if(event.target==this){modal='';render()}"><div class="sheet">${b}<button class="btn g w" style="margin-top:8px" onclick="modal='';render()">Cerrar</button></div></div>`:''}
+function pick(i){F.pack=F.offer.items[i];mo('gid')}
+function sendId(){const g=$('#gid').value.trim();if(g.length<5)return toast('ID inválido');F.gid=g;F.ctx={type:'r',game:F.offer.game,pack:F.pack[0],gid:g,saldo:F.pack[1],usdt:+crz(F.pack[1])};F.m='';mo('pay')}
+function depGo(){const q=Math.max(1,Math.floor(+$('#dq').value||1));F.ctx={type:'d',game:'Wallet',pack:q,gid:'-',saldo:q*S.st.rate,usdt:q};F.m='';F.nocr=1;mo('pay')}
+function payH(){const c=F.ctx,s=S.st,u=me();let b=`<h3>Método de pago</h3><p class="sm">${c.type=='r'?`${e(c.game)} 💎${c.pack} · ID ${e(c.gid)}`:`Depósito de ${c.pack} CRZ`}</p><div style="display:flex;gap:6px;flex-wrap:wrap">${[['s','📱 Saldo Móvil'],['b','🏦 Transferencia'],['u','💲 USDT']].concat(F.nocr?[]:[['c','🪙 Créditos']]).map(m=>`<button class="btn ${F.m==m[0]?'':'g'} s" onclick="F.m='${m[0]}';render()">${m[1]}</button>`).join('')}</div>`;
+ const cr=(l,v)=>`<div class="row"><span><span class="sm">${l}</span><br><b>${e(v)}</b></span><button class="btn s g" onclick="cp('${e(v)}')">Copiar</button></div>`;
+ const f='<label>Captura de la transferencia</label><input id="pf" type="file" accept="image/*">';
+ if(F.m=='s')b+=cr('Enviar saldo al teléfono',s.phone)+`<div class="row"><span>Monto exacto</span><b>${money(c.saldo)} Saldo</b></div><input id="pn1" placeholder="Número desde donde envías">${f}`;
+ if(F.m=='b')b+=cr('Tarjeta a transferir',s.card)+cr('Móvil a confirmar',s.cphone)+`<div class="row"><span>Monto exacto</span><b>${money(c.saldo)}</b></div><input id="pn1" placeholder="Tu número">${f}`;
+ if(F.m=='u')b+=cr('Dirección USDT (TRC20)',s.usdt)+`<div class="row"><span>Monto exacto</span><b>${c.usdt} USDT</b></div><input id="pn1" placeholder="HASH de la transferencia">`;
+ if(F.m=='c')b+=`<div class="row"><span>Tu saldo</span><b>${u.credits.toFixed(2)} CRZ</b></div><div class="row"><span>Precio</span><b>${c.usdt} CRZ</b></div>${u.credits>=c.usdt?'':'<p style="color:var(--no)">No tienes créditos suficientes</p>'}`;
+ if(F.m)b+='<button class="btn w" style="margin-top:8px" onclick="submitO()">Enviar a revisión</button>';return b}
+function submitO(){const c=F.ctx,u=me(),m=F.m,d=$('#pn1')?$('#pn1').value.trim():'';
+ if(m!='c'&&!d)return toast('Completa los datos');if((m=='s'||m=='b')&&!($('#pf').files[0]))return toast('Sube la captura');
+ if(m=='c'){if(u.credits<c.usdt)return toast('Créditos insuficientes');u.credits=+(u.credits-c.usdt).toFixed(2)}
+ const o={id:'DC'+Math.random().toString(36).slice(2,7).toUpperCase(),uid:u.email,name:u.name,type:c.type,game:c.game,pack:c.pack,gid:c.gid,saldo:c.saldo,usdt:c.usdt,m,d,file:m=='s'||m=='b'?$('#pf').files[0].name:'',status:0,ts:Date.now()};
+ S.orders.push(o);save();modal='';ovId=o.id;lastSt[o.id]=0;render()}
+const mn={s:'Saldo Móvil',b:'Transferencia',u:'USDT',c:'Créditos'};
+function ovH(){const o=S.orders.find(x=>x.id==ovId);if(!o)return'';const st=o.status;
+ return `<div class="full ${st==1?'ok':st==2?'no':''}"><div class="orb"><i></i><i></i><i></i>${st==1?'✅':st==2?'❌':'💎'}</div><h2 style="margin:0 0 14px">${st==1?'¡Pedido aceptado!':st==2?'Pedido rechazado':'Procesando tu pedido...'}</h2><div class="sum">📦 ${o.type=='r'?`${e(o.game)} 💎${o.pack}`:`Depósito ${o.pack} CRZ`}<br>💰 ${o.m=='u'||o.m=='c'?o.usdt+(o.m=='u'?' USDT':' CRZ'):money(o.saldo)+' Saldo'}<br>💳 ${mn[o.m]}<br>🎮 ID: ${e(o.gid)}<br>🧾 #${o.id}</div><button class="btn g" onclick="ovId=null;render()">Minimizar</button></div>`}
+function ordersV(){const l=S.orders.filter(o=>o.uid==S.cur).reverse();return `<h3>📦 Mis pedidos</h3>`+(l.map(o=>`<div class="card" onclick="ovId='${o.id}';render()" style="cursor:pointer"><div class="row" style="border:0"><b>${o.type=='r'?`${e(o.game)} 💎${o.pack}`:`Depósito ${o.pack} CRZ`}</b><span class="badge b${o.status}">${['Pendiente','Aceptado','Rechazado'][o.status]}</span></div><div class="sm">#${o.id} · ${mn[o.m]} · ${new Date(o.ts).toLocaleString()}</div></div>`).join('')||'<p class="sm">Aún no tienes pedidos</p>')}
+function wallet(){const u=me(),d=S.orders.filter(o=>o.uid==S.cur&&o.type=='d').reverse().slice(0,8);
+ return `<div class="card hero"><div style="display:flex;justify-content:center">${gem}</div><div class="sm" style="color:#fff">Tu saldo</div><h2 style="font-size:34px">${u.credits.toFixed(2)} CRZ</h2></div><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn w" onclick="mo('dep')">➕ Depositar</button><button class="btn w g" onclick="mo('send')">📤 Enviar</button></div><div class="card"><b>Últimos depósitos</b>${d.map(o=>`<div class="row"><span>${o.pack} CRZ<br><span class="sm">${new Date(o.ts).toLocaleDateString()}</span></span><span class="badge b${o.status}">${['Pendiente','Aceptado','Rechazado'][o.status]}</span></div>`).join('')||'<p class="sm">Sin depósitos</p>'}</div>`}
+function sendCr(){const em=$('#se').value.trim().toLowerCase(),q=+$('#sq').value,u=me(),t=S.users.find(x=>x.email==em);if(!t||em==u.email)return toast('Destinatario no válido');if(!(q>0)||q>u.credits)return toast('Cantidad inválida');u.credits=+(u.credits-q).toFixed(2);t.credits=+(t.credits+q).toFixed(2);save();modal='';toast('Créditos enviados ✅');render()}
+function profile(){const u=me();return `<div class="card" style="text-align:center"><div style="width:84px;height:84px;margin:auto;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;font-weight:900">${e(u.name[0]||'?').toUpperCase()}</div><h3 style="margin:8px 0 2px">${e(u.name)}</h3><div class="sm">${e(u.email)}</div></div><div class="card"><div class="row"><span>📞 Teléfono</span><b>${e(u.phone)||'—'}</b></div><div class="row"><span>🪙 Créditos</span><b>${u.credits.toFixed(2)} CRZ</b></div><div class="row"><span>📦 Pedidos</span><b>${S.orders.filter(o=>o.uid==u.email).length}</b></div><div class="row"><span>📅 Miembro desde</span><b>${new Date(u.ts).toLocaleDateString()}</b></div></div><button class="btn w g" onclick="mo('edit')">✏️ Editar perfil</button><button class="btn w no" style="margin-top:8px" onclick="S.cur=null;save();render()">Cerrar sesión</button>`}
+function adminV(){if(!isAdm())return'<p>Sin acceso</p>';let b='';
+ if(aTab=='cli')b=S.users.map(u=>`<div class="card"><b>${e(u.name)}</b> ${u.banned?'🚫':''} ${u.admin?'👑':''}<div class="sm">${e(u.email)} · ${u.credits.toFixed(2)} CRZ</div>${u.email!=ADMIN?`<button class="btn s no" onclick="tg('${e(u.email)}','banned')">${u.banned?'Desbanear':'Banear'}</button> <button class="btn s g" onclick="tg('${e(u.email)}','admin')">${u.admin?'Quitar admin':'Poner admin'}</button>`:''}</div>`).join('');
+ if(aTab=='ord')b=S.orders.slice().reverse().map(o=>`<div class="card"><div class="row" style="border:0"><b>#${o.id} ${o.type=='r'?`${e(o.game)} 💎${o.pack}`:`Dep. ${o.pack} CRZ`}</b><span class="badge b${o.status}">${['Pendiente','Aceptado','Rechazado'][o.status]}</span></div><div class="sm">${e(o.name)} · ${e(o.uid)}<br>ID: ${e(o.gid)} · ${mn[o.m]}<br>${o.m=='u'||o.m=='c'?o.usdt:money(o.saldo)} · Dato: ${e(o.d)} ${e(o.file)}</div>${o.status==0?`<button class="btn s ok" onclick="dec('${o.id}',1)">Aceptar</button> <button class="btn s no" onclick="dec('${o.id}',2)">Rechazar</button>`:''}</div>`).join('')||'<p class="sm">Sin pedidos</p>';
+ if(aTab=='ofe')b=S.offers.map((o,gi)=>`<div class="card"><b>${o.emoji} ${e(o.game)}</b> <button class="btn s no" onclick="S.offers.splice(${gi},1);save();render()">Borrar juego</button>${o.items.map((p,i)=>`<div style="display:flex;gap:5px;align-items:center">💎<input type="number" value="${p[0]}" onchange="S.offers[${gi}].items[${i}][0]=+this.value;save()">📱<input type="number" value="${p[1]}" onchange="S.offers[${gi}].items[${i}][1]=+this.value;save()"><button class="btn s no" onclick="S.offers[${gi}].items.splice(${i},1);save();render()">✕</button></div>`).join('')}<button class="btn s g" onclick="S.offers[${gi}].items.push([0,0]);save();render()">+ Oferta</button></div>`).join('')+`<div class="card"><input id="ng" placeholder="Nuevo juego"><input id="ne" placeholder="Emoji" value="🎮"><button class="btn w" onclick="if($('#ng').value){S.offers.push({id:'g'+Date.now(),game:$('#ng').value,emoji:$('#ne').value,items:[]});save();render()}">Añadir juego</button></div>`;
+ if(aTab=='set'){const L={group:'Link del grupo',channel:'Link del canal',wa1:'WhatsApp soporte 1',wa2:'WhatsApp soporte 2',rate:'Saldo por 1 CRZ',phone:'Teléfono saldo móvil',card:'Tarjeta',cphone:'Móvil a confirmar',usdt:'Dirección USDT',notice:'Aviso'};b=Object.keys(L).map(k=>`<label>${L[k]}</label><input value="${e(S.st[k])}" onchange="S.st['${k}']=${k=='rate'?'+this.value||305':'this.value'};save();toast('Guardado ✅')">`).join('')}
+ return `<h3>🛠️ Admin</h3><div class="tabs">${[['cli','Clientes'],['ord','Pedidos'],['ofe','Ofertas'],['set','Ajustes']].map(t=>`<button class="btn s ${aTab==t[0]?'':'g'}" onclick="aTab='${t[0]}';render()">${t[1]}</button>`).join('')}</div>${b}`}
+function tg(em,k){const u=S.users.find(x=>x.email==em);u[k]=!u[k];save();render()}
+function dec(id,s){const o=S.orders.find(x=>x.id==id);o.status=s;const u=S.users.find(x=>x.email==o.uid);
+ if(s==1&&o.type=='d'&&u)u.credits=+(u.credits+o.pack).toFixed(2);
+ if(s==2&&o.m=='c'&&u)u.credits=+(u.credits+o.usdt).toFixed(2);save();render()}
+async function ask(){const q=$('#cq').value.trim();if(!q)return;chat.push({r:'me',t:q});chat.push({r:'bot',t:'Roxi está pensando...'});render();let a;
+ try{const sm=await claude.use('sample');if(sm){const r=await sm(`Eres Roxi, asistente IA de DiamondsCompany, tienda de recargas de diamantes de Free Fire. Pagos: saldo móvil, transferencia, USDT y créditos CRZ (1 CRZ = ${S.st.rate} saldo). Entrega en menos de 15 minutos. Responde breve en español. Pregunta: `+q,{cache:false});a=r.text}}catch(x){}
+ chat[chat.length-1].t=a||'Recargamos en menos de 15 minutos. Elige tu oferta en Principal, pon tu ID, paga y espera la aprobación. Si necesitas más ayuda, escríbenos por WhatsApp 💬';render();const c=$('#ch');if(c)c.scrollTop=1e9}
+setInterval(()=>{try{const n=JSON.parse(localStorage.getItem(K));if(!n)return;const ch=n.orders.some(o=>(lastSt[o.id]??o.status)!=o.status);n.orders.forEach(o=>{if(lastSt[o.id]!==undefined&&lastSt[o.id]!=o.status)toast(o.status==1?'✅ Pedido aceptado':'❌ Pedido rechazado');lastSt[o.id]=o.status});if(ch||JSON.stringify(n.orders)!=JSON.stringify(S.orders)){const k=document.activeElement&&document.activeElement.tagName;S=Object.assign(S,n);if(k!='INPUT'&&k!='TEXTAREA')render()}}catch(x){}},2500);
+render();
+</script></body></html>
